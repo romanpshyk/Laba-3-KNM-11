@@ -1,0 +1,34 @@
+def cesar_code(inp):
+
+    alphabet = "abcdefghijklmnoprstuvwxyzabcdefghijklmnoprstuvwxyz0123456789"
+
+    text=inp
+    key = 1
+    text = text.lower()
+    password = ""
+    for i in text:
+        a = alphabet.find(i)
+        b = a + key
+        if i in alphabet:
+            password = password + alphabet[b]
+        else:
+            password = password + i
+    print("your password: ", password)
+    return password
+def cesar_decode(inp):
+    alphabet = "abcdefghijklmnoprstuvwxyzabcdefghijklmnoprstuvwxyz"
+    text=inp
+    key = 24
+    text = text.lower()
+    password = ""
+    for i in text:
+        position = alphabet.find(i)
+        newposition = position + key
+        if i in alphabet:
+            password = password + alphabet[newposition]
+        else:
+            password = password + i
+    print("your text: ", password)
+    return password
+code=cesar_code('abc')
+cesar_decode(code)
